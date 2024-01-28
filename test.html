@@ -7,52 +7,52 @@
   <title>Document</title>
   <style>
     #mySection {
-      width: 100vw;
-      height: 100vh;
+      height: 400px;
       background-color: lightblue;
       transition: transform 1s;
       transform-origin: left top;
-      /* 新增轉換原點 */
+      /* 轉換原點設在左上角 */
     }
 
-    .rotate {}
+    .rotate {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vh;
+      /* 將寬度設為視窗的高度 */
+      height: 100vw;
+      /* 將高度設為視窗的寬度 */
+      transform: rotate(90deg) translate(0, -400px);
+      transform-origin: top left;
+      /* 調整轉換原點 */
+      z-index: 9999;
+    }
+
+    button {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 9999;
+    }
   </style>
 </head>
 
 <body>
 
   <h1>My Web Page</h1>
-  <div id="mySection">This is a section.</div>
+  <div id="mySection">This is a section.This is a section.This is a section.This is a section.This is a section.This is
+    a section.This is a section.This is a section.This is a section.This is a section.This is a section.This is a
+    section.This is a section.This is a section.This is a section.This is a section.This is a section.This is a
+    section.This is a section.This is a section.This is a section.This is a section.This is a section.This is a
+    section.This is a section.This is a section.This is a section.This is a section.</div>
   <button onclick="toggleFullscreen()">Toggle Fullscreen and Rotate</button>
 
   <script>
     function toggleFullscreen() {
       var element = document.getElementById("mySection");
-
-      if (!document.fullscreenElement) {
-        if (element.requestFullscreen) {
-          element.requestFullscreen();
-        } else if (element.msRequestFullscreen) {
-          element.msRequestFullscreen();
-        } else if (element.mozRequestFullScreen) {
-          element.mozRequestFullScreen();
-        } else if (element.webkitRequestFullscreen) {
-          element.webkitRequestFullscreen();
-        }
-        element.classList.add("rotate");
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
-        }
-        element.classList.remove("rotate");
-      }
+      element.classList.toggle("rotate");
     }
+
   </script>
 
 </body>
