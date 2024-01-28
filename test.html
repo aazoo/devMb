@@ -5,27 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-</head>
-<style>
-  #mySection {
-    width: 100vw;
-    height: 100vh;
-    background-color: lightblue;
-    transition: transform 1s;
-  }
+  <style>
+    #mySection {
+      width: 100vw;
+      height: 100vh;
+      background-color: lightblue;
+      transition: transform 1s;
+      transform-origin: left top;
+      /* 新增轉換原點 */
+    }
 
-  .rotate {
-    transform: rotate(90deg);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 999;
-  }
-</style>
+    .rotate {}
+  </style>
 </head>
 
 <body>
